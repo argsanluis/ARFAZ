@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARFAZ | Taller de Madera y Metal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primario: #2D2D2D;
+            --color-secundario: #C4A484;
+            --color-accento: #5F5F5F;
+            --blanco: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--blanco);
+            color: var(--color-primario);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--color-primario);
+        }
+
+        .logo span {
+            font-weight: 600;
+            color: var(--color-secundario);
+        }
+
+        .nav-links a {
+            color: var(--color-primario);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-secundario);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 2rem;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                        url('textura-madera-metal.jpg') center/cover;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: var(--color-accento);
+        }
+
+        /* Servicios */
+        .servicios {
+            padding: 6rem 2rem;
+            background: var(--blanco);
+        }
+
+        .servicios-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .servicio-card {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .servicio-icon {
+            font-size: 2rem;
+            color: var(--color-secundario);
+            margin-bottom: 1rem;
+        }
+
+        /* Galería */
+        .galeria {
+            padding: 4rem 2rem;
+            background: #f8f8f8;
+        }
+
+        .galeria-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contacto */
+        .contacto {
+            padding: 6rem 2rem;
+            background: var(--blanco);
+        }
+
+        .contacto-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contacto-form {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        input, textarea {
+            padding: 1rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            width: 100%;
+            font-size: 1rem;
+            background: transparent;
+        }
+
+        button {
+            background: var(--color-primario);
+            color: var(--blanco);
+            padding: 1.2rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: var(--color-secundario);
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            background: var(--color-primario);
+            color: var(--blanco);
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--blanco);
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--color-secundario);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AR<span>FAZ</span></div>
+            <div class="nav-links">
+                <a href="#inicio">Taller</a>
+                <a href="#servicios">Técnicas</a>
+                <a href="#galeria">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Artesanía contemporánea en madera y metal</h1>
+            <p>Donde la precisión industrial se encuentra con el arte manual</p>
+            <button>Ver proyectos</button>
+        </div>
+    </section>
+
+    <section class="servicios" id="servicios">
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <i class="fas fa-drafting-compass servicio-icon"></i>
+                <h3>Diseño Industrial</h3>
+                <p>Planos técnicos y modelado 3D profesional</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-hammer servicio-icon"></i>
+                <h3>Fabricación Artesanal</h3>
+                <p>Técnicas tradicionales y modernas</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-paint-roller servicio-icon"></i>
+                <h3>Acabados Personalizados</h3>
+                <p>Tratamientos superficiales a medida</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="galeria" id="galeria">
+        <div class="galeria-grid">
+            <div class="galeria-item"><img src="proyecto1.jpg" alt="Mesa industrial"></div>
+            <div class="galeria-item"><img src="proyecto2.jpg" alt="Escultura metálica"></div>
+            <div class="galeria-item"><img src="proyecto3.jpg" alt="Detalle madera"></div>
+            <div class="galeria-item"><img src="proyecto4.jpg" alt="Mueble contemporáneo"></div>
+        </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <div class="contacto-content">
+            <h2>Materiales que perduran</h2>
+            <form class="contacto-form">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <textarea rows="5" placeholder="Describe tu proyecto..." required></textarea>
+                <button type="submit">Enviar consulta</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>© 2023 ARFAZ - Taller de creación material</p>
+    </footer>
+</body>
+</html>
